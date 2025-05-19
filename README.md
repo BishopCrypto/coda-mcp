@@ -34,11 +34,51 @@ npm install -g coda-mcp-client
 
 ## 🔑 Setup
 
-Get your API key from [coda.io/account](https://coda.io/account) and set it:
+### Step 1: Get Your Coda API Key
+1. Go to [coda.io/account](https://coda.io/account)
+2. Generate an API token under "API Settings"
+3. Copy the token (starts with something like `464c04e1-...`)
+
+### Step 2: Set Environment Variable
+
+**For current terminal session:**
+```bash
+export CODA_API_KEY="464c04e1-a705-4206-a87c-beeca5044089"
+```
+
+**For permanent setup (recommended):**
+
+Add to your shell profile (`~/.zshrc`, `~/.bashrc`, or `~/.bash_profile`):
+```bash
+echo 'export CODA_API_KEY="464c04e1-a705-4206-a87c-beeca5044089"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Step 3: Verify Setup
 
 ```bash
-export CODA_API_KEY="your-api-key-here"
+# Test the CLI
+coda-mcp list-docs
+
+# Should show your documents, not an error about missing API key
 ```
+
+### 🚨 Common Issues
+
+**Error: "CODA_API_KEY environment variable not set"**
+- Make sure you've exported the key in your current terminal
+- Restart your terminal after adding to shell profile
+- Verify with: `echo $CODA_API_KEY`
+
+**Error: "API Error 401"**
+- Double-check your API key is correct
+- Make sure there are no extra spaces or quotes
+- Generate a new API key if needed
+
+**Error: "No documents found"**
+- Your API key might not have access to any documents
+- Try creating a test document in Coda first
+- Check that your account has the necessary permissions
 
 ## 🎁 Free Resources
 
@@ -135,7 +175,57 @@ coda-mcp update-page-content doc-abc123 page-def456 "# Updated content" replace 
 
 This client is designed for seamless integration with Claude's Model Context Protocol:
 
-### 1. Basic MCP Server Setup
+### 1. Quick Start for Claude Desktop
+
+**Step 1: Install the package globally**
+```bash
+npm install -g coda-mcp-client
+```
+
+**Step 2: Create MCP server file**
+Create `/path/to/coda-mcp-server.js`:
+```javascript
+#!/usr/bin/env node
+const { CodaMCPServer } = require('coda-mcp-client/examples/mcp-integration');
+
+const server = new CodaMCPServer(process.env.CODA_API_KEY);
+
+// Start MCP server
+async function main() {
+    if (!process.env.CODA_API_KEY) {
+        console.error('CODA_API_KEY environment variable required');
+        process.exit(1);
+    }
+    
+    console.log('Coda MCP server starting...');
+    // MCP server implementation here
+}
+
+main().catch(console.error);
+```
+
+**Step 3: Add to Claude Desktop config**
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "coda": {
+      "command": "node",
+      "args": ["/absolute/path/to/coda-mcp-server.js"],
+      "env": {
+        "CODA_API_KEY": "your-actual-api-key-here"
+      }
+    }
+  }
+}
+```
+
+**Important Notes:**
+- Use absolute paths, not relative paths
+- Replace `your-actual-api-key-here` with your real API key
+- Restart Claude Desktop after config changes
+
+### 2. Alternative: Direct API Usage
 
 ```javascript
 const { CodaMCPServer } = require('coda-mcp-client/examples/mcp-integration');
@@ -149,24 +239,6 @@ const tools = server.getTools();
 const result = await server.executeTool('coda_list_docs', {});
 ```
 
-### 2. Claude Desktop Integration
-
-Add to your Claude Desktop configuration:
-
-```json
-{
-  "mcpServers": {
-    "coda": {
-      "command": "node",
-      "args": ["/path/to/your/coda-mcp-server.js"],
-      "env": {
-        "CODA_API_KEY": "your-api-key"
-      }
-    }
-  }
-}
-```
-
 ### 3. Available MCP Tools
 
 - `coda_list_docs` - List all accessible documents
@@ -176,6 +248,24 @@ Add to your Claude Desktop configuration:
 - `coda_insert_row` - Insert new rows via conversation
 - `coda_create_page` - Create pages with AI-generated content
 - `coda_search_data` - Search for specific information
+
+### 🚨 MCP Troubleshooting
+
+**Claude doesn't see Coda tools:**
+- Verify Claude Desktop config syntax (valid JSON)
+- Check that paths are absolute, not relative
+- Restart Claude Desktop after config changes
+- Look for errors in Claude logs
+
+**"CODA_API_KEY not set" in MCP:**
+- API key must be in Claude Desktop config `env` section
+- Don't rely on shell environment variables for MCP
+- Each MCP server gets its own environment
+
+**MCP server won't start:**
+- Test the server manually: `node /path/to/coda-mcp-server.js`
+- Check Node.js version compatibility
+- Verify all dependencies are installed globally
 
 ## 📚 API Reference
 
@@ -287,6 +377,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - **⭐ Star this repo** if it helped you!
 - **🐛 Issues**: [GitHub Issues](https://github.com/BishopCrypto/coda-mcp/issues)
 - **📖 Documentation**: [GitHub Wiki](https://github.com/BishopCrypto/coda-mcp/wiki)
+- **🔧 Troubleshooting**: [Common issues & solutions](./TROUBLESHOOTING.md)
 - **💬 Community**: [Join our Discord](https://discord.gg/thedevelopers) 
 - **📧 Updates**: [Newsletter for automation tips](https://thedevelopers.dev/newsletter)
 - **🌐 Website**: [https://thedevelopers.dev](https://thedevelopers.dev)

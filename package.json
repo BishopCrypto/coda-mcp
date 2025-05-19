@@ -42,6 +42,7 @@
     "cli.js",
     "examples/",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "TROUBLESHOOTING.md"
   ]
 }
