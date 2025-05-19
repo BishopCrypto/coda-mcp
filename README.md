@@ -1,8 +1,8 @@
-# @thedevelopers/coda-mcp-client
+# coda-mcp-client
 
 > Complete Coda API client with MCP integration for AI automation
 
-[![npm version](https://badge.fury.io/js/@thedevelopers%2Fcoda-mcp-client.svg)](https://www.npmjs.com/package/@thedevelopers/coda-mcp-client)
+[![npm version](https://badge.fury.io/js/coda-mcp-client.svg)](https://www.npmjs.com/package/coda-mcp-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A production-ready Coda API client that solves real problems in the Coda ecosystem. Built by [Ryan Scott](https://github.com/BishopCrypto) at [The Developers](https://thedevelopers.dev) to fill gaps in existing tools and provide seamless AI automation through Model Context Protocol (MCP) integration.
@@ -24,10 +24,10 @@ A production-ready Coda API client that solves real problems in the Coda ecosyst
 ## 📦 Installation
 
 ```bash
-npm install @thedevelopers/coda-mcp-client
+npm install coda-mcp-client
 
 # Or use globally for CLI
-npm install -g @thedevelopers/coda-mcp-client
+npm install -g coda-mcp-client
 ```
 
 ## 🔑 Setup
@@ -43,7 +43,7 @@ export CODA_API_KEY="your-api-key-here"
 ### Programmatic API
 
 ```javascript
-const CodaClient = require('@thedevelopers/coda-mcp-client');
+const CodaClient = require('coda-mcp-client');
 
 const client = new CodaClient(process.env.CODA_API_KEY);
 
@@ -116,7 +116,7 @@ This client is designed for seamless integration with Claude's Model Context Pro
 ### 1. Basic MCP Server Setup
 
 ```javascript
-const { CodaMCPServer } = require('@thedevelopers/coda-mcp-client/examples/mcp-integration');
+const { CodaMCPServer } = require('coda-mcp-client/examples/mcp-integration');
 
 const server = new CodaMCPServer(process.env.CODA_API_KEY);
 

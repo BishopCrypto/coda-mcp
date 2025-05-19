@@ -1,5 +1,5 @@
 /**
- * @thedevelopers/coda-mcp-client
+ * coda-mcp-client
  * Complete Coda API client with MCP integration for AI automation
  * 
  * Developed by Ryan Scott at The Developers (https://thedevelopers.dev)

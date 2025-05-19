@@ -1,5 +1,5 @@
 {
-  "name": "@thedevelopers/coda-mcp-client",
+  "name": "coda-mcp-client",
   "version": "1.0.0",
   "description": "Complete Coda API client with MCP integration for AI automation",
   "main": "index.js",

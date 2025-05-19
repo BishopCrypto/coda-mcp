@@ -62,7 +62,7 @@ async function basicExample() {
         
         console.log('✅ Basic example completed successfully!');
         console.log('\nNext steps:');
-        console.log('- Try the CLI: npx @thedevelopers/coda-mcp-client list-docs');
+        console.log('- Try the CLI: npx coda-mcp-client list-docs');
         console.log('- Check out examples/mcp-integration.js for AI automation');
         console.log('- Read the full documentation at https://github.com/BishopCrypto/coda-mcp');
         

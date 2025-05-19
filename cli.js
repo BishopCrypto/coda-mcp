@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @thedevelopers/coda-mcp-client CLI
+ * coda-mcp-client CLI
  * Command-line interface for Coda API operations
  * 
  * Developed by Ryan Scott at The Developers (https://thedevelopers.dev)
