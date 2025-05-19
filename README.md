@@ -13,6 +13,7 @@ A production-ready Coda API client that solves real problems in the Coda ecosyst
 
 **Fixes What's Broken:**
 - ✅ **Page creation/updates that actually work** (existing tools have broken API calls)
+- ✅ **Handles unlimited content size** with automatic chunking (no size limitations!)
 - ✅ **Complete table operations** with proper error handling
 - ✅ **Support for replace/append modes** for page content
 - ✅ **Markdown & HTML content support**

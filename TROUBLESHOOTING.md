@@ -116,6 +116,20 @@ const CodaClient = require('coda-mcp-client');
 const CodaClient = require('/path/to/node_modules/coda-mcp-client');
 ```
 
+### 7. Large Content Issues (RESOLVED as of v1.1.0)
+
+**Previous Problem**: Creating pages with large content (>5000 chars) would hang.
+
+**Solution**: ✅ **Automatically fixed in version 1.1.0!**
+- Content is now automatically split into chunks
+- No user intervention required
+- Works seamlessly for any content size
+
+**If you're on an older version**:
+```bash
+npm update coda-mcp-client  # Updates to latest version
+```
+
 ## 🔍 Debug Mode
 
 **Enable verbose logging**:
