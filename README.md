@@ -5,6 +5,8 @@
 [![npm version](https://badge.fury.io/js/coda-mcp-client.svg)](https://www.npmjs.com/package/coda-mcp-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**🎁 [Get Free Automation Guide + Templates](https://thedevelopers.dev/coda-guide)**
+
 A production-ready Coda API client that solves real problems in the Coda ecosystem. Built by [Ryan Scott](https://github.com/BishopCrypto) at [The Developers](https://thedevelopers.dev) to fill gaps in existing tools and provide seamless AI automation through Model Context Protocol (MCP) integration.
 
 ## 🚀 Why This Client?
@@ -37,6 +39,26 @@ Get your API key from [coda.io/account](https://coda.io/account) and set it:
 ```bash
 export CODA_API_KEY="your-api-key-here"
 ```
+
+## 🎁 Free Resources
+
+### **Automation Starter Guide**
+Get our comprehensive guide with proven workflows:
+- ✅ Complete setup walkthrough
+- ✅ 5 production-ready automation templates  
+- ✅ Troubleshooting checklist
+- ✅ Advanced integration examples
+
+**[Download Free Guide →](https://thedevelopers.dev/coda-guide)**
+
+### **Premium Workflows**
+Want done-for-you solutions? Check out our premium automation pack:
+- 🚀 15+ advanced workflow templates
+- 🎥 Video setup tutorials
+- 💬 Private community access
+- 🛠️ Custom configuration files
+
+**[Get Premium Pack ($47) →](https://thedevelopers.dev/coda-premium)**
 
 ## 🏗️ Usage
 
@@ -260,13 +282,24 @@ npm test
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🙋 Support
+## 🙋 Support & Community
 
-- **Issues**: [GitHub Issues](https://github.com/BishopCrypto/coda-mcp/issues)
-- **Documentation**: [GitHub Wiki](https://github.com/BishopCrypto/coda-mcp/wiki)
-- **Community**: [The Developers Discord](https://discord.gg/thedevelopers)
-- **Website**: [https://thedevelopers.dev](https://thedevelopers.dev)
-- **Author**: [Ryan Scott](https://github.com/BishopCrypto)
+- **⭐ Star this repo** if it helped you!
+- **🐛 Issues**: [GitHub Issues](https://github.com/BishopCrypto/coda-mcp/issues)
+- **📖 Documentation**: [GitHub Wiki](https://github.com/BishopCrypto/coda-mcp/wiki)
+- **💬 Community**: [Join our Discord](https://discord.gg/thedevelopers) 
+- **📧 Updates**: [Newsletter for automation tips](https://thedevelopers.dev/newsletter)
+- **🌐 Website**: [https://thedevelopers.dev](https://thedevelopers.dev)
+- **👨‍💻 Author**: [Ryan Scott](https://github.com/BishopCrypto)
+
+### 🤝 Professional Services
+
+Need custom Coda automation or enterprise setup?
+- Custom MCP server development
+- Advanced workflow design
+- Team training & support
+
+Contact: [ryan@thedevelopers.dev](mailto:ryan@thedevelopers.dev)
 
 ## 🌟 Why We Built This
 
